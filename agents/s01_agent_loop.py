@@ -103,4 +103,7 @@ if __name__ == "__main__":
             for block in response_content:
                 if hasattr(block, "text"):
                     print(block.text)
+        print("##########")
+        print(history)
+        print("##########")
         print()

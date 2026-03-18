@@ -112,6 +112,7 @@ Use load_skill to access specialized knowledge before tackling unfamiliar topics
 Skills available:
 {SKILL_LOADER.get_descriptions()}"""
 
+print(SYSTEM)
 
 # -- Tool implementations --
 def safe_path(p: str) -> Path:
@@ -222,4 +223,7 @@ if __name__ == "__main__":
             for block in response_content:
                 if hasattr(block, "text"):
                     print(block.text)
+        print("######")
+        print(history)
+        print("######")
         print()

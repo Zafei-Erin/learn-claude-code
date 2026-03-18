@@ -180,7 +180,7 @@ def agent_loop(messages: list):
                     output = handler(**block.input) if handler else f"Unknown tool: {block.name}"
                 except Exception as e:
                     output = f"Error: {e}"
-                print(f"> {block.name}: {str(output)[:200]}")
+                print(f"> {block.name}: {str(output)[:1000]}")
                 results.append({"type": "tool_result", "tool_use_id": block.id, "content": str(output)})
                 if block.name == "todo":
                     used_todo = True
@@ -206,4 +206,8 @@ if __name__ == "__main__":
             for block in response_content:
                 if hasattr(block, "text"):
                     print(block.text)
+
+        print("######")
+        print(history)
+        print("######")
         print()
